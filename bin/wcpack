@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var pack = require('..'),
+var fs = require('fs'),
+    pack = require('..'),
     program = require('commander');
 
 program
@@ -8,6 +9,7 @@ program
   .option('-m, --minify', 'Minify the JavaScript before packing.')
   .option('-t, --traverse', 'Traverse the subdirectories')
   .option('-i, --indent [size]', 'Indentation size [2]', 2)
+  .option('-o, --out [file]', 'Out [file] name')
   .parse(process.argv);
 
 var directory = program.args[0];
@@ -15,8 +17,18 @@ if(!directory) {
   throw "Oh noes";
 }
 
-var packer = pack(directory).indent(program.indent |0);
+var packer = pack(directory)
+  .indent(program.indent |0);
 
 packer.end(function(output) {
-  console.log(output);
+  if(program.out) {
+    var fileName = program.out;
+    fs.writeFile(fileName, output, function(err) {
+      if(err) {
+        console.error(err);
+      }
+    });
+  } else {
+    console.log(output);
+  }
 });
