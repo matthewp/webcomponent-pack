@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var cc = require('coffee-script').compile,
+var beautify = require('js-beautify').html,
+    cc = require('coffee-script').compile,
     fs = require('fs'),
     jsdom = require('jsdom'),
     program = require('commander');
@@ -15,9 +16,13 @@ program
   .version('0.0.1')
   .option('-m, --minify', 'Minify the JavaScript before packing.')
   .option('-t, --traverse', 'Traverse the subdirectories')
+  .option('-i, --indent [size]', 'Indentation size [2]', 2)
   .parse(process.argv);
 
-var directory = program.args[0] || './';
+var directory = program.args[0];
+if(!directory) {
+  throw "Oh noes";
+}
 
 function logerr(callback) {
   return function(err) {
@@ -91,6 +96,10 @@ function packComponent() {
    script.textContent = js.join('\n');
    element.appendChild(script);
 
-   console.log(element.outerHTML);
+   var output = beautify(element.outerHTML, {
+    indent_size: program.indent |0
+   });
+
+   console.log(output);
   }));
 }
