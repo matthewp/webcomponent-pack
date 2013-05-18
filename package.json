@@ -4,7 +4,7 @@
   "description": "Packs HTML, JavaScript, and CSS into a web component package.",
   "main": "index.js",
   "bin": {
-    "wcpack": "./index.js"
+    "wcpack": "./bin/wcpack"
   },
   "directories": {
     "test": "test"
