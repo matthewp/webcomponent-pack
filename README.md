@@ -4,7 +4,7 @@
 ## Need
 As great as WebComponents are, they are best packaged as a single file, and that isn't necessarily the most convenient way to develop thing. This is where `wcpack` comes in; it allows you to develop your components as a single file, and then package them together for distribution.
 
-`wcpack` will take all of your component's HTML, JavaScript, and CSS files and concatenate them together and package them as a single .html file. It will also automatically compile CoffeeScript files before packaging.
+`wcpack` will take all of your component's HTML, JavaScript, and CSS files and concatenate them together and package them as a single .html file. It will also automatically compile CoffeeScript and Less files before packaging.
 
 # Installation
 To install the command line tool:
