@@ -6,7 +6,7 @@ var fs = require('fs'),
 
 program
   .version('0.0.1')
-  .option('-m, --minify', 'Minify the JavaScript before packing.')
+  .option('-m, --minify', 'Minify the JavaScript before packing')
   .option('-t, --traverse', 'Traverse the subdirectories')
   .option('-i, --indent [size]', 'Indentation size [2]', 2)
   .option('-o, --out [file]', 'Out [file] name')
@@ -18,7 +18,8 @@ if(!directory) {
 }
 
 var packer = pack(directory)
-  .indent(program.indent |0);
+  .indent(program.indent |0)
+  .minify(!!program.minify);
 
 packer.end(function(output) {
   if(program.out) {

@@ -1,6 +1,6 @@
 {
   "name": "wcpack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Packs HTML, JavaScript, and CSS into a web component package.",
   "main": "index.js",
   "bin": {
@@ -13,7 +13,8 @@
     "coffee-script": ">=1.6.2",
     "commander": "~1.1.1",
     "jsdom": "~0.6.3",
-    "js-beautify": "~1.3.2"
+    "js-beautify": "~1.3.2",
+    "uglify-js": ">=2.3.4"
   },
   "devDependencies": {},
   "scripts": {
