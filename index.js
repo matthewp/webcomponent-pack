@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var fs = require('fs'),
+var cc = require('coffee-script').compile,
+    fs = require('fs'),
     jsdom = require('jsdom'),
     program = require('commander');
 
@@ -53,7 +54,11 @@ fs.readdir(directory, logerr(function check(fileNames) {
 var placePutter = {
   'html': function(d) { html = d; },
   'js': function(d) { js.push(d); },
-  'css': function(d) { css.push(d); }
+  'css': function(d) { css.push(d); },
+  'coffee': function(d) {
+    var output = cc(d);
+    js.push(output);
+  }
 };
 
 function resolveFile(fullPath, callback) {

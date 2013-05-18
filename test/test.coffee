@@ -1,0 +1,4 @@
+foo = ''
+
+fn = ->
+  "hello world"
