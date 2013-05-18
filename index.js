@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs'),
     jsdom = require('jsdom'),
     program = require('commander');
@@ -11,6 +13,7 @@ var slice = Array.prototype.slice;
 program
   .version('0.0.1')
   .option('-m, --minify', 'Minify the JavaScript before packing.')
+  .option('-t, --traverse', 'Traverse the subdirectories')
   .parse(process.argv);
 
 var directory = program.args[0] || './';

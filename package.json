@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "Packs HTML, JavaScript, and CSS into a web component package.",
   "main": "index.js",
+  "bin": {
+    "wcpack": "./index.js"
+  },
   "directories": {
     "test": "test"
   },
