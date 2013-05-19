@@ -5,19 +5,18 @@ var fs = require('fs'),
     program = require('commander');
 
 program
-  .version('0.0.1')
+  .version('0.0.4')
   .option('-m, --minify', 'Minify the JavaScript before packing')
-  .option('-t, --traverse', 'Traverse the subdirectories')
   .option('-i, --indent [size]', 'Indentation size [2]', 2)
   .option('-o, --out [file]', 'Out [file] name')
   .parse(process.argv);
 
-var directory = program.args[0];
-if(!directory) {
+var inFileName = program.args[0];
+if(!inFileName) {
   throw "Oh noes";
 }
 
-var packer = pack(directory)
+var packer = pack(inFileName)
   .indent(program.indent |0)
   .minify(!!program.minify);
 

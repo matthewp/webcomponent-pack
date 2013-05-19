@@ -52,7 +52,7 @@ You would package these files together with this command:
 wcpack -o component.html tabs.html
 ```
 
-This simply tells wcpack to package the current directory's contents and write the results to component.html. You'd wind up with this output:
+This simply tells wcpack to package the component defined in tabs.html and write the results to component.html. You'd wind up with this output:
 ```html
 <element name="tabs">
   <section>I'm tabs!</section>
@@ -78,7 +78,7 @@ Everything that can be down from the command line tool can also be done from `no
 ```javascript
 var pack = require('wcpack');
 
-pack('./mycomponent')
+pack('./mycomponent.html')
   .indent(2)
   .minify()
   .end(function(output) {
