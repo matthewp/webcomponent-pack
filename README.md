@@ -4,7 +4,7 @@
 ## Need
 As great as WebComponents are, they are best packaged as a single file, and that isn't necessarily the most convenient way to develop thing. This is where `wcpack` comes in; it allows you to develop your components as a single file, and then package them together for distribution.
 
-`wcpack` will take all of your component's HTML, JavaScript, and CSS files and concatenate them together and package them as a single .html file. It will also automatically compile CoffeeScript and Less files before packaging.
+`wcpack` will take all of your component's HTML, JavaScript, and CSS files and concatenate them together and package them as a single .html file.
 
 # Installation
 To install the command line tool:
@@ -28,6 +28,7 @@ tabs.html
   <section>
     I'm tabs!
   </section>
+  <script src="tabs.js"></script>
 </element>
 ```
 
@@ -48,7 +49,7 @@ if(this !== window) {
 
 You would package these files together with this command:
 ```
-wcpack -o component.html .
+wcpack -o component.html tabs.html
 ```
 
 This simply tells wcpack to package the current directory's contents and write the results to component.html. You'd wind up with this output:
