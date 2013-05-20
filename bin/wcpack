@@ -11,12 +11,12 @@ program
   .option('-o, --out [file]', 'Out [file] name')
   .parse(process.argv);
 
-var inFileName = program.args[0];
-if(!inFileName) {
+var files = program.args;
+if(!files.length) {
   throw "Oh noes";
 }
 
-var packer = pack(inFileName)
+var packer = pack(files)
   .indent(program.indent |0)
   .minify(!!program.minify);
 
