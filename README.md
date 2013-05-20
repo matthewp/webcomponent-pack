@@ -75,6 +75,31 @@ This simply tells wcpack to package the component defined in tabs.html and write
 # Multiple inputs
 Additionally wcpack allows for multiple input files to pack into a single `.html` file. This is useful when you have a group of components that are related. For example with a `tabs` component you would likely want to allow for `tab` elements to be nested. In this case you want to pack these into a single component.
 
+To pack multiple components into one simply path multiple files from the command line:
+
+```
+wcpack -o component.html tab.html tabs.html
+```
+
+or from Node:
+```var javascript
+var pack = require('wcpack'),
+    fs = require('fs');
+
+pack('tabs.html', 'tab.html')
+  .end(function(output) {
+    fs.writeFile('component.html', output, 'utf8', function() {
+      // All done!
+    });
+   });
+```
+
+Or as an array from Node:
+
+```javascript
+pack(['tab.html', 'tabs.html']).end(function(output){ ...
+```
+
 # From Node
 Everything that can be down from the command line tool can also be done from `node`. Here's a simple example:
 
