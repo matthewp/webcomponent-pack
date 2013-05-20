@@ -1,4 +1,0 @@
-foo = ''
-
-fn = ->
-  "hello world"
