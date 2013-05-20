@@ -72,6 +72,9 @@ This simply tells wcpack to package the component defined in tabs.html and write
 </element>
 ```
 
+# Multiple inputs
+Additionally wcpack allows for multiple input files to pack into a single `.html` file. This is useful when you have a group of components that are related. For example with a `tabs` component you would likely want to allow for `tab` elements to be nested. In this case you want to pack these into a single component.
+
 # From Node
 Everything that can be down from the command line tool can also be done from `node`. Here's a simple example:
 
