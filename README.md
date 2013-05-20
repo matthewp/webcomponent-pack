@@ -82,7 +82,7 @@ wcpack -o component.html tab.html tabs.html
 ```
 
 or from Node:
-```var javascript
+```javascript
 var pack = require('wcpack'),
     fs = require('fs');
 
