@@ -1,6 +1,6 @@
 {
   "name": "wcpack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Packs HTML, JavaScript, and CSS into a web component package.",
   "main": "index.js",
   "bin": {
