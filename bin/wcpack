@@ -5,7 +5,7 @@ var fs = require('fs'),
     program = require('commander');
 
 program
-  .version('0.1.1')
+  .version('0.1.2')
   .option('-m, --minify', 'Minify the JavaScript before packing')
   .option('-i, --indent [size]', 'Indentation size [2]', 2)
   .option('-o, --out [file]', 'Out [file] name')
